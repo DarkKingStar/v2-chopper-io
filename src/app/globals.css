@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  html,
+  body {
+    @apply dark:bg-trueGray-900;
+  }
+}
+
+.bg-theme-100{
+  background-color: #db5f6a;
+}
+.text-theme-100{
+  color: #db5f6a;
+}
+.bg-theme-200{
+  background-color: #d2525c;
+}
+.text-theme-200{
+  color: #d2525c;
+}
