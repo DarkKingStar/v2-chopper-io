@@ -12,14 +12,21 @@
 }
 
 .bg-theme-100{
-  background-color: #db5f6a;
+  background-color: #E23E57;
 }
 .text-theme-100{
-  color: #db5f6a;
+  color: #E23E57;
 }
 .bg-theme-200{
   background-color: #d2525c;
 }
+.bg-theme-800{
+  background-color: #8b1b2c;
+}
 .text-theme-200{
   color: #d2525c;
+}
+
+.gradient-background-theme{
+  background: linear-gradient(to top right,#8b1b2c, #E23E57, #FF9292);
 }

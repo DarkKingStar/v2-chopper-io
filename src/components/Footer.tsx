@@ -2,9 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { Container } from "@/components/Container";
-
+import { navigation } from "@/components/navigation";
 export function Footer() {
-  const navigation = ["Product", "Features", "Pricing", "Company", "Blog"];
   const legal = ["Terms", "Privacy", "Legal"];
   return (
     <div className="relative">
@@ -18,7 +17,7 @@ export function Footer() {
                 className="flex items-center space-x-2 text-2xl font-medium text-theme-200 dark:text-gray-100"
               >
                 <Image
-                  src="/img/logo.svg"
+                  src="/icon.svg"
                   alt="N"
                   width="32"
                   height="32"
@@ -29,9 +28,8 @@ export function Footer() {
             </div>
 
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
-              Chopper.IO is a free landing page & marketing website template for
-              startups and indie projects. Its built with Next.js & TailwindCSS.
-              And its completely open-source.
+            Chopper.IO is a free anime streaming and download platform designed for the Otaku community.
+            Enjoy unlimited access to your favorite anime shows and movies, all in one place.
             </div>
 
             <div className="mt-5">
@@ -56,10 +54,10 @@ export function Footer() {
               {navigation.map((item, index) => (
                 <Link
                   key={index}
-                  href="/"
+                  href={item.href}
                   className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-theme-200 focus:text-theme-200 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700"
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
             </div>
@@ -78,10 +76,10 @@ export function Footer() {
             </div>
           </div>
           <div className="">
-            <div>Follow us</div>
+            <div>Follow me</div>
             <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
               <a
-                href="https://twitter.com/web3templates"
+                href="https://twitter.com/"
                 target="_blank"
                 rel="noopener"
               >
@@ -89,7 +87,7 @@ export function Footer() {
                 <Twitter />
               </a>
               <a
-                href="https://facebook.com/web3templates"
+                href="https://facebook.com/"
                 target="_blank"
                 rel="noopener"
               >
@@ -97,7 +95,7 @@ export function Footer() {
                 <Facebook />
               </a>
               <a
-                href="https://instagram.com/web3templates"
+                href="https://instagram.com/"
                 target="_blank"
                 rel="noopener"
               >
@@ -112,19 +110,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">
-          Copyright © {new Date().getFullYear()}. Made with ♥ by{" "}
+        <div className="mt-10 text-sm text-center text-gray-600 dark:text-gray-400">
+          Copyright © 2023. Made with ♥ by{" "}
           <a href="https://web3templates.com/" target="_blank" rel="noopener">
-            Web3Templates.
-          </a>{" "}
-          Illustrations from{" "}
-          <a href="https://www.glazestock.com/" target="_blank" rel="noopener ">
-            Glazestock
+            DarkinStar
           </a>
         </div>
       </Container>
-      {/* Do not remove this */}
-      <Backlink />
     </div>
   );
 }
