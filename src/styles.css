@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --bg-color: white;
+    --text-color: black;
+}
+
+.dark-mode {
+  --bg-color: black;
+  --text-color: white;
+}
+
+
+
+
+.outline-theme-2{
+    outline: 1.5px solid var(--text-color) ;
+}
+.outline-theme-2:hover{
+    outline: 2.5px solid var(--text-color) ;
+}
+
+
+*{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease-in-out;
+}
+
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content {
+  flex-grow: 1;
+}

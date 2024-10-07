@@ -1,0 +1,70 @@
+<nav class="bg-transparent">
+  <div class="w-full mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex space-x-4 items-center justify-between">
+        <a
+          href="#"
+          class="text-lg font-bold text-theme-700 hover:text-theme-400"
+          >Chopper.IO</a
+        >
+
+        <!-- Primary Nav Links (Desktop) -->
+        <app-menu class="hidden lg:flex items-center space-x-1" />
+      </div>
+
+      <!-- Search Bar (Desktop) -->
+      <div class="hidden lg:flex items-center justify-between space-x-8">
+        <app-search />
+        <app-theme-toggler />
+      </div>
+
+      <!-- Mobile Button -->
+      <div class="lg:hidden flex items-center">
+        <button class="mobile-menu-button">
+          <svg
+            *ngIf="!isActiveButton()"
+            class="w-6 h-6 text-normal-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+          <svg
+            *ngIf="isActiveButton()"
+            class="w-6 h-6 text-normal-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Links (Hidden by default) -->
+  <div class="mobile-menu hidden lg:hidden">
+    <app-menu class="flex flex-col space-y-1" />
+
+    <!-- Search Bar (Mobile) -->
+    <div class="lg:flex flex-col items-center justify-between space-y-1">
+      <app-search />
+      <app-theme-toggler />
+    </div>
+  </div>
+</nav>

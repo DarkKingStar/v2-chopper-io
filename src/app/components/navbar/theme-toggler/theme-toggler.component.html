@@ -1,0 +1,14 @@
+<button type="button" class="bg-transparent mr-5 my-3" (click)="toggleTheme()">
+  <img
+    *ngIf="isDarkMode"
+    src="assets/moon-logo.svg"
+    alt="Moon"
+    style="background-color: transparent; width: 30px; height: 30px"
+  />
+  <img
+    *ngIf="!isDarkMode"
+    src="assets/sun-logo.svg"
+    alt="Sun"
+    style="background-color: transparent; width: 30px; height: 30px"
+  />
+</button>

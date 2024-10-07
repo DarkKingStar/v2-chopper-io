@@ -1,0 +1,32 @@
+<form
+  class="flex mx-5 my-3 items-center justify-between rounded-md outline-none outline-theme-2"
+  (submit)="handleSubmit($event)"
+
+>
+  <input
+    type="text"
+    placeholder="Search"
+    class="pl-3 rounded-md"
+    onkeypress="event.charCode == 32 ? handleSubmit(event) : null"
+    [(ngModel)]="searchValue"
+    name="search"
+    required
+    style="outline: none; border: none; width: calc(15vw + 32vh);"
+    minlength="3"
+    required="true"
+  />
+  <button
+    type="submit"
+    [class.cursor-not-allowed]="!isSearchButtonClickable"
+    [disabled]="!isSearchButtonClickable"
+    class="bg-transparent"
+    [style.opacity]="isSearchButtonClickable ? 1 : 0.6"
+    style="background-color: aqua;"
+  >
+    <img
+      src="assets/search-logo.svg"
+      alt="Search"
+      style="width: 30px; height: 30px;"
+    />
+  </button>
+</form>

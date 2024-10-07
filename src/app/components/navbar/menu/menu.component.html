@@ -1,0 +1,30 @@
+<div *ngFor="let item of menu">
+    <div *ngIf="!item.multiple" class="mx-5 text-normal-500 hover:text-normal-300">
+    <a [href]="item.path">{{item.name}}</a>
+    </div>
+    <div *ngIf="item.multiple" class="relative" (mouseover)="openDropdown(item)" (mouseleave)="onMouseLeave()" (click)="openDropdown(item)">
+            <div  class="cursor-pointer flex items-center justify-between px-5 text-normal-500 hover:text-normal-300">
+              <span>
+              {{item.name}}
+              </span>
+              <span *ngIf="checkisOpen(item)" class="rotate-180">
+                <svg class="w-4 h-4 inline-block ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+              <span *ngIf="!checkisOpen(item)">
+                <svg class="w-4 h-4 inline-block ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </div>
+    
+            <div *ngIf="checkisOpen(item)" class="absolute z-10 shadow-md w-48 rounded-md" style="max-height: 500px; overflow-y: scroll">
+              <div *ngFor="let pa of item.submenu" class="px-5 py-2 text-normal-500 hover:text-normal-300">
+                <a [href]="pa.path">{{pa.name}}</a>
+              </div>
+            </div>
+          </div>    
+  </div>
+   
+    
