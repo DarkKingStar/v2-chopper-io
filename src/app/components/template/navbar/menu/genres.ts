@@ -1,4 +1,4 @@
-import { MenuType } from "./menuType";
+import { MenuType } from "../../../../models/menu.model";
 
 export const genres : MenuType[] =  [
     { name: 'Action', path: 'action' },

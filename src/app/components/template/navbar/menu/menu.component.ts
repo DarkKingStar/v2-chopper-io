@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule} from '@angular/common';
 import { menu } from './menu';
-import { MenuType } from './menuType';
+import { MenuType } from "../../../../models/menu.model";
+
 
 @Component({
   selector: 'app-menu',
