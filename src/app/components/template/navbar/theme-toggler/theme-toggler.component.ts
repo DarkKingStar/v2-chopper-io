@@ -23,6 +23,7 @@ export class ThemeTogglerComponent implements OnInit {
       localStorage.setItem('theme', 'light');
       this.isDarkMode = false;
     }
+    this.changeVisibilityOfIcons();
   }
 
   checkThemeAndSet() {
@@ -32,6 +33,17 @@ export class ThemeTogglerComponent implements OnInit {
     } else {
       document.body.classList.remove('dark-mode');
       this.isDarkMode = false;
+    }
+    this.changeVisibilityOfIcons();
+  }
+
+  changeVisibilityOfIcons() {
+    if (this.isDarkMode) {
+      document.getElementById('moon')?.classList.remove('hidden');
+      document.getElementById('sun')?.classList.add('hidden');
+    } else {
+      document.getElementById('moon')?.classList.add('hidden');
+      document.getElementById('sun')?.classList.remove('hidden');
     }
   }
 }
